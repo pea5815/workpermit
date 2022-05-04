@@ -552,31 +552,36 @@
                             <form class="row g-3" action="action_page.php" method="get">
                                 <div class="col-md-12">
                                     <label for="inputName5" class="form-label">การไฟฟ้าที่จะขอเข้าพื้นที่</label>
-                                    <input type="text" class="form-control" name="ogani_id" placeholder="กฟอ...">
+                                    <select class="form-select" aria-label="Default select example" name="organi_id">
+                                        <option selected>- กรุณาเลือกพื้นที่ที่ต้องการเข้าปฏิบัติงาน -</option>
+                                        <option value="1">กฟอ.บัวใหญ่</option>
+                                        <option value="2">กฟส.ประทาย</option>
+                                        <option value="3">กฟส.คง</option>
+                                    </select>
                                 </div>
                                 <div class="col-md-4">
                                     <label for="inputEmail5" class="form-label">เจ้าหน้าที่ กฟภ.</label>
-                                    <input type="email" class="form-control" name="depart_name" placeholder="กรส., กรท.,">
+                                    <input type="text" class="form-control" name="in_organi" placeholder="กรส., กรท.,">
                                 </div>
                                 <div class="col-md-4">
                                     <label for="inputPassword5" class="form-label">ชื่อผู้คุมงาน</label>
-                                    <input type="text" class="form-control" name="forman_pea" placeholder="ชื่อ-สกุล">
+                                    <input type="text" class="form-control" name="in_fullname" placeholder="ชื่อ-สกุล">
                                 </div>
                                 <div class="col-md-4">
                                     <label for="inputPassword5" class="form-label">เบอร์โทรศัพท์</label></label>
-                                    <input type="text" class="form-control" name="forman_pea_tel" placeholder="0xx-xxxxxxx">
+                                    <input type="text" class="form-control" name="in_tel" placeholder="0xx-xxxxxxx">
                                 </div>
                                 <div class="col-md-4">
                                     <label for="inputEmail5" class="form-label">หน่วยงานภายนอก</label>
-                                    <input type="email" class="form-control" name="ogani_name" placeholder="บริษัท...">
+                                    <input type="text" class="form-control" name="out_organi" placeholder="บริษัท...">
                                 </div>
                                 <div class="col-md-4">
                                     <label for="inputPassword5" class="form-label">ชื่อผู้คุมงาน</label>
-                                    <input type="text" class="form-control" name="ogani_forman" placeholder="ชื่อ-สกุล">
+                                    <input type="text" class="form-control" name="out_fullname" placeholder="ชื่อ-สกุล">
                                 </div>
                                 <div class="col-md-4">
                                     <label for="inputPassword5" class="form-label">เบอร์โทรศัพท์</label>
-                                    <input type="text" class="form-control" name="ogani_forman_tel" placeholder="0xx-xxxxxxx">
+                                    <input type="text" class="form-control" name="out_tel" placeholder="0xx-xxxxxxx">
                                 </div>
                                 <div class="col-md-3">
                                     <label for="inputPassword5" class="form-label">วันเริ่มปฏิบัติงาน</label>
@@ -596,12 +601,12 @@
                                 </div>
                                 <div class="col-12">
                                     <label for="inputAddress2" class="form-label">รายละเอียด</label>
-                                    <textarea name="editor1" required class="form-control" id="exampleInputPassword1" type="text"></textarea>
+                                    <textarea name="editor1" required class="form-control" type="text"></textarea>
                                     <script>
                                     CKEDITOR.replace('editor1');
                                     </script>
                                 </div>
-                                
+
                                 <div class="text-center">
                                     <button type="submit" class="btn btn-primary">SAVE</button>
                                     <button type="reset" class="btn btn-secondary">RESET</button>
@@ -617,25 +622,45 @@
                         <div class="card-body">
                             <h5 class="card-title">Advanced Form Elements</h5>
 
-                            <!-- Advanced Form Elements -->
+
                             <table class="table table-striped">
                                 <thead>
                                     <tr>
-                                        <th scope="col">#</th>
-                                        <th scope="col">Name</th>
-                                        <th scope="col">Position</th>
+                                        <th scope="col">ว/ด/ป</th>
+                                        <th scope="col">ชื่อ - สกุล</th>
+                                        <th scope="col"></th>
                                         <th scope="col">Age</th>
                                         <th scope="col">Start Date</th>
                                     </tr>
                                 </thead>
                                 <tbody>
+                                    <!-- Advanced Form Elements -->
+                                    <?php
+                                    include'connect.php';
+
+                                    $sql = "SELECT * FROM activity";
+                                    $result = $conn->query($sql);
+
+                                    if ($result->num_rows > 0) {
+                                        
+                                        // output data of each row
+                                        //organi_id, in_organi, in_fullname, in_tel, out_organi, out_fullname, out_tel, start_date1, start_time, end_date, end_time, detail
+                                        while($row = $result->fetch_assoc()) {
+                                            ?>
                                     <tr>
-                                        <th scope="row">1</th>
-                                        <td>Brandon Jacob</td>
+                                        <th scope="row"><?php echo $row['start_date1']." - ".$row['end_date'];?></th>
+                                        <td><?php echo "(".$row['in_organi'].") ".$row['in_fullname'];?></td>
                                         <td>Designer</td>
                                         <td>28</td>
                                         <td>2016-05-25</td>
                                     </tr>
+                                    <?php
+                                        }
+                                    } else {
+                                        echo "0 results";
+                                    }
+                                    ?>
+
                                     <tr>
                                         <th scope="row">2</th>
                                         <td>Bridie Kessler</td>
