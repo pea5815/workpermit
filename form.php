@@ -4,7 +4,7 @@
     <meta charset="utf-8" />
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
 
-    <title>Forms / Elements - NiceAdmin Bootstrap Template</title>
+    <title>แบบฟอร์มขอเข้าพื้นที่ Work Permit V.1</title>
     <meta content="" name="description" />
     <meta content="" name="keywords" />
 
@@ -657,214 +657,90 @@
                 <h5 class="card-title">General Form Elements</h5>
 
                 <!-- General Form Elements -->
-                <form>
-                  <div class="row mb-3">
-                    <label for="inputText" class="col-sm-2 col-form-label"
-                      >Text</label
-                    >
-                    <div class="col-sm-10">
-                      <input type="text" class="form-control" />
-                    </div>
-                  </div>
-                  <div class="row mb-3">
-                    <label for="inputEmail" class="col-sm-2 col-form-label"
-                      >Email</label
-                    >
-                    <div class="col-sm-10">
-                      <input type="email" class="form-control" />
-                    </div>
-                  </div>
-                  <div class="row mb-3">
-                    <label for="inputPassword" class="col-sm-2 col-form-label"
-                      >Password</label
-                    >
-                    <div class="col-sm-10">
-                      <input type="password" class="form-control" />
-                    </div>
-                  </div>
-                  <div class="row mb-3">
-                    <label for="inputNumber" class="col-sm-2 col-form-label"
-                      >Number</label
-                    >
-                    <div class="col-sm-10">
-                      <input type="number" class="form-control" />
-                    </div>
-                  </div>
-                  <div class="row mb-3">
-                    <label for="inputNumber" class="col-sm-2 col-form-label"
-                      >File Upload</label
-                    >
-                    <div class="col-sm-10">
-                      <input class="form-control" type="file" id="formFile" />
-                    </div>
-                  </div>
-                  <div class="row mb-3">
-                    <label for="inputDate" class="col-sm-2 col-form-label"
-                      >Date</label
-                    >
-                    <div class="col-sm-10">
-                      <input type="date" class="form-control" />
-                    </div>
-                  </div>
-                  <div class="row mb-3">
-                    <label for="inputTime" class="col-sm-2 col-form-label"
-                      >Time</label
-                    >
-                    <div class="col-sm-10">
-                      <input type="time" class="form-control" />
-                    </div>
-                  </div>
-
-                  <div class="row mb-3">
-                    <label for="inputColor" class="col-sm-2 col-form-label"
-                      >Color Picker</label
-                    >
-                    <div class="col-sm-10">
-                      <input
-                        type="color"
-                        class="form-control form-control-color"
-                        id="exampleColorInput"
-                        value="#4154f1"
-                        title="Choose your color"
-                      />
-                    </div>
-                  </div>
-                  <div class="row mb-3">
-                    <label for="inputPassword" class="col-sm-2 col-form-label"
-                      >Textarea</label
-                    >
-                    <div class="col-sm-10">
-                      <textarea
+                <form class="row g-3">
+                <div class="col-md-12">
+                  <label for="inputName5" class="form-label">การไฟฟ้าที่จะขอเข้าพื้นที่</label>
+                  <input type="text" class="form-control" id="inputName5" placeholder="กฟอ...">
+                </div>
+                <div class="col-md-4">
+                  <label for="inputEmail5" class="form-label">เจ้าหน้าที่ กฟภ.</label>
+                  <input type="email" class="form-control" id="inputEmail5"placeholder="กรส., กรท.,">
+                </div>
+                <div class="col-md-4">
+                  <label for="inputPassword5" class="form-label">ชื่อผู้คุมงาน</label>
+                  <input type="text" class="form-control" id="inputPassword5" placeholder="ชื่อ-สกุล">
+                </div>
+                <div class="col-md-4">
+                  <label for="inputPassword5" class="form-label">เบอร์โทรศัพท์</label></label>
+                  <input type="text" class="form-control" id="inputPassword5" placeholder="0xx-xxxxxxx">
+                </div>
+                <div class="col-md-4">
+                  <label for="inputEmail5" class="form-label">หน่วยงานภายนอก</label>
+                  <input type="email" class="form-control" id="inputEmail5"placeholder="บริษัท...">
+                </div>
+                <div class="col-md-4">
+                  <label for="inputPassword5" class="form-label">ชื่อผู้คุมงาน</label>
+                  <input type="text" class="form-control" id="inputPassword5" placeholder="ชื่อ-สกุล">
+                </div>
+                <div class="col-md-4">
+                  <label for="inputPassword5" class="form-label">เบอร์โทรศัพท์</label>
+                  <input type="text" class="form-control" id="inputPassword5" placeholder="0xx-xxxxxxx">
+                </div>
+                <div class="col-md-3">
+                  <label for="inputPassword5" class="form-label">วันเริ่มปฏิบัติงาน</label>
+                  <input type="date" class="form-control">
+                </div>
+                <div class="col-md-3">
+                  <label for="inputPassword5" class="form-label">เวลา</label>
+                  <input type="time" class="form-control">
+                </div>
+                <div class="col-md-3">
+                  <label for="inputPassword5" class="form-label">วันสิ้นสุดงาน</label>
+                  <input type="date" class="form-control">
+                </div>
+                <div class="col-md-3">
+                  <label for="inputPassword5" class="form-label">เวลา</label>
+                  <input type="time" class="form-control">
+                </div>
+                <div class="col-12">
+                  <label for="inputAddress5" class="form-label">Address</label>
+                  <textarea
                         class="form-control"
                         style="height: 100px"
                       ></textarea>
-                    </div>
+                </div>
+                <div class="col-12">
+                  <label for="inputAddress2" class="form-label">Address 2</label>
+                  <input type="text" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor">
+                </div>
+                <div class="col-md-6">
+                  <label for="inputCity" class="form-label">City</label>
+                  <input type="text" class="form-control" id="inputCity">
+                </div>
+                <div class="col-md-4">
+                  <label for="inputState" class="form-label">State</label>
+                  <select id="inputState" class="form-select">
+                    <option selected>Choose...</option>
+                    <option>...</option>
+                  </select>
+                </div>
+                <div class="col-md-2">
+                  <label for="inputZip" class="form-label">Zip</label>
+                  <input type="text" class="form-control" id="inputZip">
+                </div>
+                <div class="col-12">
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="gridCheck">
+                    <label class="form-check-label" for="gridCheck">
+                      Check me out
+                    </label>
                   </div>
-                  <fieldset class="row mb-3">
-                    <legend class="col-form-label col-sm-2 pt-0">Radios</legend>
-                    <div class="col-sm-10">
-                      <div class="form-check">
-                        <input
-                          class="form-check-input"
-                          type="radio"
-                          name="gridRadios"
-                          id="gridRadios1"
-                          value="option1"
-                          checked
-                        />
-                        <label class="form-check-label" for="gridRadios1">
-                          First radio
-                        </label>
-                      </div>
-                      <div class="form-check">
-                        <input
-                          class="form-check-input"
-                          type="radio"
-                          name="gridRadios"
-                          id="gridRadios2"
-                          value="option2"
-                        />
-                        <label class="form-check-label" for="gridRadios2">
-                          Second radio
-                        </label>
-                      </div>
-                      <div class="form-check disabled">
-                        <input
-                          class="form-check-input"
-                          type="radio"
-                          name="gridRadios"
-                          id="gridRadios"
-                          value="option"
-                          disabled
-                        />
-                        <label class="form-check-label" for="gridRadios3">
-                          Third disabled radio
-                        </label>
-                      </div>
-                    </div>
-                  </fieldset>
-                  <div class="row mb-3">
-                    <legend class="col-form-label col-sm-2 pt-0">
-                      Checkboxes
-                    </legend>
-                    <div class="col-sm-10">
-                      <div class="form-check">
-                        <input
-                          class="form-check-input"
-                          type="checkbox"
-                          id="gridCheck1"
-                        />
-                        <label class="form-check-label" for="gridCheck1">
-                          Example checkbox
-                        </label>
-                      </div>
-
-                      <div class="form-check">
-                        <input
-                          class="form-check-input"
-                          type="checkbox"
-                          id="gridCheck2"
-                          checked
-                        />
-                        <label class="form-check-label" for="gridCheck2">
-                          Example checkbox 2
-                        </label>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div class="row mb-3">
-                    <label class="col-sm-2 col-form-label">Disabled</label>
-                    <div class="col-sm-10">
-                      <input
-                        type="text"
-                        class="form-control"
-                        value="Read only / Disabled"
-                        disabled
-                      />
-                    </div>
-                  </div>
-
-                  <div class="row mb-3">
-                    <label class="col-sm-2 col-form-label">Select</label>
-                    <div class="col-sm-10">
-                      <select
-                        class="form-select"
-                        aria-label="Default select example"
-                      >
-                        <option selected>Open this select menu</option>
-                        <option value="1">One</option>
-                        <option value="2">Two</option>
-                        <option value="3">Three</option>
-                      </select>
-                    </div>
-                  </div>
-
-                  <div class="row mb-3">
-                    <label class="col-sm-2 col-form-label">Multi Select</label>
-                    <div class="col-sm-10">
-                      <select
-                        class="form-select"
-                        multiple
-                        aria-label="multiple select example"
-                      >
-                        <option selected>Open this select menu</option>
-                        <option value="1">One</option>
-                        <option value="2">Two</option>
-                        <option value="3">Three</option>
-                      </select>
-                    </div>
-                  </div>
-
-                  <div class="row mb-3">
-                    <label class="col-sm-2 col-form-label">Submit Button</label>
-                    <div class="col-sm-10">
-                      <button type="submit" class="btn btn-primary">
-                        Submit Form
-                      </button>
-                    </div>
-                  </div>
-                </form>
+                </div>
+                <div class="text-center">
+                  <button type="submit" class="btn btn-primary">Submit</button>
+                  <button type="reset" class="btn btn-secondary">Reset</button>
+                </div>
+              </form><!-- End Multi Columns Form -->
                 <!-- End General Form Elements -->
               </div>
             </div>
