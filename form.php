@@ -549,87 +549,62 @@
                             <h5 class="card-title">General Form Elements</h5>
 
                             <!-- General Form Elements -->
-                            <form class="row g-3">
+                            <form class="row g-3" action="action_page.php" method="get">
                                 <div class="col-md-12">
                                     <label for="inputName5" class="form-label">การไฟฟ้าที่จะขอเข้าพื้นที่</label>
-                                    <input type="text" class="form-control" id="inputName5" placeholder="กฟอ...">
+                                    <input type="text" class="form-control" name="ogani_id" placeholder="กฟอ...">
                                 </div>
                                 <div class="col-md-4">
                                     <label for="inputEmail5" class="form-label">เจ้าหน้าที่ กฟภ.</label>
-                                    <input type="email" class="form-control" id="inputEmail5" placeholder="กรส., กรท.,">
+                                    <input type="email" class="form-control" name="depart_name" placeholder="กรส., กรท.,">
                                 </div>
                                 <div class="col-md-4">
                                     <label for="inputPassword5" class="form-label">ชื่อผู้คุมงาน</label>
-                                    <input type="text" class="form-control" id="inputPassword5" placeholder="ชื่อ-สกุล">
+                                    <input type="text" class="form-control" name="forman_pea" placeholder="ชื่อ-สกุล">
                                 </div>
                                 <div class="col-md-4">
                                     <label for="inputPassword5" class="form-label">เบอร์โทรศัพท์</label></label>
-                                    <input type="text" class="form-control" id="inputPassword5"
-                                        placeholder="0xx-xxxxxxx">
+                                    <input type="text" class="form-control" name="forman_pea_tel" placeholder="0xx-xxxxxxx">
                                 </div>
                                 <div class="col-md-4">
                                     <label for="inputEmail5" class="form-label">หน่วยงานภายนอก</label>
-                                    <input type="email" class="form-control" id="inputEmail5" placeholder="บริษัท...">
+                                    <input type="email" class="form-control" name="ogani_name" placeholder="บริษัท...">
                                 </div>
                                 <div class="col-md-4">
                                     <label for="inputPassword5" class="form-label">ชื่อผู้คุมงาน</label>
-                                    <input type="text" class="form-control" id="inputPassword5" placeholder="ชื่อ-สกุล">
+                                    <input type="text" class="form-control" name="ogani_forman" placeholder="ชื่อ-สกุล">
                                 </div>
                                 <div class="col-md-4">
                                     <label for="inputPassword5" class="form-label">เบอร์โทรศัพท์</label>
-                                    <input type="text" class="form-control" id="inputPassword5"
-                                        placeholder="0xx-xxxxxxx">
+                                    <input type="text" class="form-control" name="ogani_forman_tel" placeholder="0xx-xxxxxxx">
                                 </div>
                                 <div class="col-md-3">
                                     <label for="inputPassword5" class="form-label">วันเริ่มปฏิบัติงาน</label>
-                                    <input type="date" class="form-control">
+                                    <input type="date" class="form-control" name="start_date">
                                 </div>
                                 <div class="col-md-3">
                                     <label for="inputPassword5" class="form-label">เวลา</label>
-                                    <input type="time" class="form-control">
+                                    <input type="time" class="form-control" name="start_time">
                                 </div>
                                 <div class="col-md-3">
                                     <label for="inputPassword5" class="form-label">วันสิ้นสุดงาน</label>
-                                    <input type="date" class="form-control">
+                                    <input type="date" class="form-control" name="end_date">
                                 </div>
                                 <div class="col-md-3">
                                     <label for="inputPassword5" class="form-label">เวลา</label>
-                                    <input type="time" class="form-control">
+                                    <input type="time" class="form-control" name="end_time">
                                 </div>
                                 <div class="col-12">
-                                    <label for="inputAddress2" class="form-label">Address 2</label>
-                                    <textarea name="editor1" required class="form-control" id="exampleInputPassword1"
-                                        type="text"></textarea>
+                                    <label for="inputAddress2" class="form-label">รายละเอียด</label>
+                                    <textarea name="editor1" required class="form-control" id="exampleInputPassword1" type="text"></textarea>
                                     <script>
                                     CKEDITOR.replace('editor1');
                                     </script>
                                 </div>
-                                <div class="col-md-6">
-                                    <label for="inputCity" class="form-label">City</label>
-                                    <input type="text" class="form-control" id="inputCity">
-                                </div>
-                                <div class="col-md-4">
-                                    <label for="inputState" class="form-label">State</label>
-                                    <select id="inputState" class="form-select">
-                                        <option selected>Choose...</option>
-                                        <option>...</option>
-                                    </select>
-                                </div>
-                                <div class="col-md-2">
-                                    <label for="inputZip" class="form-label">Zip</label>
-                                    <input type="text" class="form-control" id="inputZip">
-                                </div>
-                                <div class="col-12">
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" id="gridCheck">
-                                        <label class="form-check-label" for="gridCheck">
-                                            Check me out
-                                        </label>
-                                    </div>
-                                </div>
+                                
                                 <div class="text-center">
-                                    <button type="submit" class="btn btn-primary">Submit</button>
-                                    <button type="reset" class="btn btn-secondary">Reset</button>
+                                    <button type="submit" class="btn btn-primary">SAVE</button>
+                                    <button type="reset" class="btn btn-secondary">RESET</button>
                                 </div>
                             </form><!-- End Multi Columns Form -->
                             <!-- End General Form Elements -->
