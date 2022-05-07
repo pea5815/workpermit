@@ -561,47 +561,54 @@
                                 </div>
                                 <div class="col-md-4">
                                     <label for="inputEmail5" class="form-label">เจ้าหน้าที่ กฟภ.</label>
-                                    <input type="text" class="form-control" name="in_organi" placeholder="กรส., กรท.,">
+                                    <input type="text" class="form-control" name="in_organi" placeholder="กรส., กรท.,"
+                                        required>
                                 </div>
                                 <div class="col-md-4">
                                     <label for="inputPassword5" class="form-label">ชื่อผู้คุมงาน</label>
-                                    <input type="text" class="form-control" name="in_fullname" placeholder="ชื่อ-สกุล">
+                                    <input type="text" class="form-control" name="in_fullname" placeholder="ชื่อ-สกุล"
+                                        required>
                                 </div>
                                 <div class="col-md-4">
                                     <label for="inputPassword5" class="form-label">เบอร์โทรศัพท์</label></label>
-                                    <input type="text" class="form-control" name="in_tel" placeholder="0xx-xxxxxxx">
+                                    <input type="text" class="form-control" name="in_tel" placeholder="0xx-xxxxxxx"
+                                        required>
                                 </div>
                                 <div class="col-md-4">
                                     <label for="inputEmail5" class="form-label">หน่วยงานภายนอก</label>
-                                    <input type="text" class="form-control" name="out_organi" placeholder="บริษัท...">
+                                    <input type="text" class="form-control" name="out_organi" placeholder="บริษัท..."
+                                        required>
                                 </div>
                                 <div class="col-md-4">
                                     <label for="inputPassword5" class="form-label">ชื่อผู้คุมงาน</label>
-                                    <input type="text" class="form-control" name="out_fullname" placeholder="ชื่อ-สกุล">
+                                    <input type="text" class="form-control" name="out_fullname" placeholder="ชื่อ-สกุล"
+                                        required>
                                 </div>
                                 <div class="col-md-4">
                                     <label for="inputPassword5" class="form-label">เบอร์โทรศัพท์</label>
-                                    <input type="text" class="form-control" name="out_tel" placeholder="0xx-xxxxxxx">
+                                    <input type="text" class="form-control" name="out_tel" placeholder="0xx-xxxxxxx"
+                                        required>
                                 </div>
                                 <div class="col-md-3">
                                     <label for="inputPassword5" class="form-label">วันเริ่มปฏิบัติงาน</label>
-                                    <input type="date" class="form-control" name="start_date">
+                                    <input type="date" class="form-control" name="start_date" required>
                                 </div>
                                 <div class="col-md-3">
                                     <label for="inputPassword5" class="form-label">เวลา</label>
-                                    <input type="time" class="form-control" name="start_time">
+                                    <input type="time" class="form-control" name="start_time" required>
                                 </div>
                                 <div class="col-md-3">
                                     <label for="inputPassword5" class="form-label">วันสิ้นสุดงาน</label>
-                                    <input type="date" class="form-control" name="end_date">
+                                    <input type="date" class="form-control" name="end_date" required>
                                 </div>
                                 <div class="col-md-3">
                                     <label for="inputPassword5" class="form-label">เวลา</label>
-                                    <input type="time" class="form-control" name="end_time">
+                                    <input type="time" class="form-control" name="end_time" required>
                                 </div>
                                 <div class="col-12">
                                     <label for="inputAddress2" class="form-label">รายละเอียด</label>
-                                    <textarea name="editor1" required class="form-control" type="text"></textarea>
+                                    <textarea name="editor1" required class="form-control" type="text"
+                                        required></textarea>
                                     <script>
                                     CKEDITOR.replace('editor1');
                                     </script>
@@ -652,7 +659,11 @@
                                         <td><?php echo "(".$row['in_organi'].") ".$row['in_fullname'];?></td>
                                         <td>Designer</td>
                                         <td>28</td>
-                                        <td>2016-05-25</td>
+                                        <td>
+                                            <div class="icon">
+                                                <a href="form_edit.php?id=<?php echo $row['actity_id'];?>" class="ri ri-edit-2-fill">ลบ</a>
+                                            </div>
+                                        </td>
                                     </tr>
                                     <?php
                                         }
@@ -660,35 +671,6 @@
                                         echo "0 results";
                                     }
                                     ?>
-
-                                    <tr>
-                                        <th scope="row">2</th>
-                                        <td>Bridie Kessler</td>
-                                        <td>Developer</td>
-                                        <td>35</td>
-                                        <td>2014-12-05</td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row">3</th>
-                                        <td>Ashleigh Langosh</td>
-                                        <td>Finance</td>
-                                        <td>45</td>
-                                        <td>2011-08-12</td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row">4</th>
-                                        <td>Angus Grady</td>
-                                        <td>HR</td>
-                                        <td>34</td>
-                                        <td>2012-06-11</td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row">5</th>
-                                        <td>Raheem Lehner</td>
-                                        <td>Dynamic Division Officer</td>
-                                        <td>47</td>
-                                        <td>2011-04-19</td>
-                                    </tr>
                                 </tbody>
                             </table>
                             <!-- End Table with stripped rows -->
