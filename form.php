@@ -660,8 +660,22 @@
                                         <td>Designer</td>
                                         <td>28</td>
                                         <td>
-                                            <div class="icon">
-                                                <a href="form_edit.php?id=<?php echo $row['actity_id'];?>" class="ri ri-edit-2-fill">ลบ</a>
+                                            <button type="button" class="btn btn-primary btn-sm" data-bs-toggle="modal"
+                                                data-bs-target="#basicModal">
+                                                ลบ
+                                            </button>
+                                            <div class="modal fade" id="basicModal" tabindex="-1">
+                                                <div class="modal-dialog">
+                                                    <div class="modal-content">
+                                                        <div class="modal-body">
+                                                            คุณแน่ใจแล้วใช่ไหม ข้อมูลนี้จะถูกลบนะ
+                                                        </div>
+                                                        <div class="modal-footer">
+                                                            <a
+                                                                href="form_del.php?id=<?php echo $row['actity_id'];?>">แน่ใจ</a>
+                                                        </div>
+                                                    </div>
+                                                </div>
                                             </div>
                                         </td>
                                     </tr>
