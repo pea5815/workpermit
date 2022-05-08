@@ -475,7 +475,7 @@
                     <span>Profile</span>
                 </a>
             </li>
-            
+
             <!-- End Profile Page Nav -->
 
             <li class="nav-item">
@@ -485,14 +485,14 @@
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="form.php">
-                    <i class="ri-draft-fill"></i>
+                <a class="nav-link collapsed" href="form.php">
+                    <i class="bi bi-question-circle"></i>
                     <span>ขอเข้าพื้นที่</span>
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link collapsed" href="branch.php">
-                    <i class="ri-git-branch-fill"></i>
+                <a class="nav-link" href="branch.php">
+                    <i class="bi bi-question-circle"></i>
                     <span>การไฟฟ้านำร่อง</span>
                 </a>
             </li>
@@ -542,182 +542,60 @@
     <!-- End Sidebar-->
 
     <main id="main" class="main">
-        <div class="pagetitle">
-            <h1>Form Elements</h1>
-            <nav>
-                <ol class="breadcrumb">
-                    <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-                    <li class="breadcrumb-item">Forms</li>
-                    <li class="breadcrumb-item active">Elements</li>
-                </ol>
-            </nav>
-        </div>
         <!-- End Page Title -->
 
         <section class="section">
             <div class="row">
-                <div class="col-lg-8">
+                <div class="col-lg-12">
                     <div class="card">
                         <div class="card-body">
                             <h5 class="card-title">General Form Elements</h5>
 
-                            <!-- General Form Elements -->
-                            <form class="row g-3" action="action_page.php" method="get">
-                                <div class="col-md-12">
-                                    <label for="inputName5" class="form-label">การไฟฟ้าที่จะขอเข้าพื้นที่</label>
-                                    <select class="form-select" aria-label="Default select example" name="organi_id">
-                                        <option selected value="">- กรุณาเลือกพื้นที่ที่ต้องการเข้าปฏิบัติงาน -</option>
-                                        <?php
-                                    include'connect.php';
+                            <!-- General Form Elements branch_id`, `branch_code`, `branch_name`, `branch_boss`, `branch_position-->
+                            <?php
+                            $idcode = $_GET['id'];
+                            include'connect.php';
+                            $sql = "SELECT * FROM branch where branch_id='$idcode'";
+                                    $result = $conn->query($sql);
 
-                                    $sql_branch = "SELECT * FROM branch";
-                                    $result_branch = $conn->query($sql_branch);
-
-                                    if ($result_branch->num_rows > 0) {
-                                        
-                                        // output data of each row
-                                        //organi_id, in_organi, in_fullname, in_tel, out_organi, out_fullname, out_tel, start_date1, start_time, end_date, end_time, detail
-                                        while($row_branch = $result_branch->fetch_assoc()) {
-                                            ?>
-                                        <option value="<?php echo $row_branch['branch_code'];?>"><?php echo $row_branch['branch_code']."-".$row_branch['branch_name'];?></option>
-
-                                        <?php
+                                    if ($result->num_rows > 0) {
+                                        while($row = $result->fetch_assoc()) {
+                                            $branch_code=$row['branch_code'];
+                                            $branch_name=$row['branch_name'];
+                                            $branch_boss=$row['branch_boss'];
+                                            $branch_position=$row['branch_position'];
                                         }
                                     } else {
                                         echo "0 results";
                                     }
                                     ?>
-                                    </select>
-                                </div>
-                                <div class="col-md-4">
-                                    <label for="inputEmail5" class="form-label">เจ้าหน้าที่ กฟภ.</label>
-                                    <input type="text" class="form-control" name="in_organi" placeholder="กรส., กรท.,"
-                                        required>
-                                </div>
-                                <div class="col-md-4">
-                                    <label for="inputPassword5" class="form-label">ชื่อผู้คุมงาน</label>
-                                    <input type="text" class="form-control" name="in_fullname" placeholder="ชื่อ-สกุล"
-                                        required>
-                                </div>
-                                <div class="col-md-4">
-                                    <label for="inputPassword5" class="form-label">เบอร์โทรศัพท์</label></label>
-                                    <input type="text" class="form-control" name="in_tel" placeholder="0xx-xxxxxxx"
-                                        required>
-                                </div>
-                                <div class="col-md-4">
-                                    <label for="inputEmail5" class="form-label">หน่วยงานภายนอก</label>
-                                    <input type="text" class="form-control" name="out_organi" placeholder="บริษัท..."
-                                        required>
-                                </div>
-                                <div class="col-md-4">
-                                    <label for="inputPassword5" class="form-label">ชื่อผู้คุมงาน</label>
-                                    <input type="text" class="form-control" name="out_fullname" placeholder="ชื่อ-สกุล"
-                                        required>
-                                </div>
-                                <div class="col-md-4">
-                                    <label for="inputPassword5" class="form-label">เบอร์โทรศัพท์</label>
-                                    <input type="text" class="form-control" name="out_tel" placeholder="0xx-xxxxxxx"
-                                        required>
-                                </div>
+                            <form class="row g-3" action="branch_update.php" method="get">
                                 <div class="col-md-3">
-                                    <label for="inputPassword5" class="form-label">วันเริ่มปฏิบัติงาน</label>
-                                    <input type="date" class="form-control" name="start_date" required>
+                                    <label for="inputEmail5" class="form-label">รหัสการไฟฟ้า</label>
+                                    <input type="text" class="form-control" name="branch_code"
+                                        value="<?php echo $branch_code;?>" required>
                                 </div>
-                                <div class="col-md-3">
-                                    <label for="inputPassword5" class="form-label">เวลา</label>
-                                    <input type="time" class="form-control" name="start_time" required>
+                                <div class="col-md-9">
+                                    <label for="inputEmail5" class="form-label">ชื่อการไฟฟ้า</label>
+                                    <input type="text" class="form-control" name="branch_name"
+                                        value="<?php echo $branch_name;?>" required>
                                 </div>
-                                <div class="col-md-3">
-                                    <label for="inputPassword5" class="form-label">วันสิ้นสุดงาน</label>
-                                    <input type="date" class="form-control" name="end_date" required>
+                                <div class="col-md-4">
+                                    <label for="inputPassword5" class="form-label">ชื่อผู้บริหาร</label>
+                                    <input type="text" class="form-control" name="branch_boss"
+                                        value="<?php echo $branch_boss;?>" required>
                                 </div>
-                                <div class="col-md-3">
-                                    <label for="inputPassword5" class="form-label">เวลา</label>
-                                    <input type="time" class="form-control" name="end_time" required>
+                                <div class="col-md-4">
+                                    <label for="inputPassword5" class="form-label">ตำแหน่ง</label></label>
+                                    <input type="text" class="form-control" name="branch_position"
+                                        value="<?php echo $branch_position;?>" required>
                                 </div>
-                                <div class="col-12">
-                                    <label for="inputAddress2" class="form-label">รายละเอียด</label>
-                                    <textarea name="editor1" required class="form-control" type="text"
-                                        required></textarea>
-                                    <script>
-                                    CKEDITOR.replace('editor1');
-                                    </script>
-                                </div>
-
+                                <input type="hidden" name="h_id" value="<?php echo $idcode;?>">
                                 <div class="text-center">
                                     <button type="submit" class="btn btn-primary">SAVE</button>
                                     <button type="reset" class="btn btn-secondary">RESET</button>
                                 </div>
                             </form><!-- End Multi Columns Form -->
-                            <!-- End General Form Elements -->
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-lg-4">
-                    <div class="card">
-                        <div class="card-body">
-                            <h5 class="card-title">Advanced Form Elements</h5>
-
-
-                            <table class="table table-striped">
-                                <thead>
-                                    <tr>
-                                        <th scope="col">ว/ด/ป</th>
-                                        <th scope="col">ชื่อ - สกุล</th>
-                                        <th scope="col"></th>
-                                        <th scope="col">Age</th>
-                                        <th scope="col">Start Date</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <!-- Advanced Form Elements -->
-                                    <?php
-                                    include'connect.php';
-
-                                    $sql = "SELECT * FROM activity";
-                                    $result = $conn->query($sql);
-
-                                    if ($result->num_rows > 0) {
-                                        
-                                        // output data of each row
-                                        //organi_id, in_organi, in_fullname, in_tel, out_organi, out_fullname, out_tel, start_date1, start_time, end_date, end_time, detail
-                                        while($row = $result->fetch_assoc()) {
-                                            ?>
-                                    <tr>
-                                        <th scope="row"><?php echo $row['start_date1']." - ".$row['end_date'];?></th>
-                                        <td><?php echo "(".$row['in_organi'].") ".$row['in_fullname'];?></td>
-                                        <td>Designer</td>
-                                        <td>28</td>
-                                        <td>
-                                            <button type="button" class="btn btn-primary btn-sm" data-bs-toggle="modal"
-                                                data-bs-target="#basicModal">
-                                                ลบ
-                                            </button>
-                                            <div class="modal fade" id="basicModal" tabindex="-1">
-                                                <div class="modal-dialog">
-                                                    <div class="modal-content">
-                                                        <div class="modal-body">
-                                                            คุณแน่ใจแล้วใช่ไหม ข้อมูลนี้จะถูกลบนะ
-                                                        </div>
-                                                        <div class="modal-footer">
-                                                            <a
-                                                                href="form_del.php?id=<?php echo $row['actity_id'];?>">แน่ใจ</a>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                    <?php
-                                        }
-                                    } else {
-                                        echo "0 results";
-                                    }
-                                    ?>
-                                </tbody>
-                            </table>
-                            <!-- End Table with stripped rows -->
                             <!-- End General Form Elements -->
                         </div>
                     </div>

@@ -46,24 +46,34 @@
         <section class="section">
             <div class="row">
                 <div class="col-md-12">
-                <a href="form.php"><button type="button" class="btn btn-primary btn-sm">ย้อนกลับ</button></a>
-                <?php
+                    <?php 
+                    //branch_id`, `branch_code`, `branch_name`, `branch_boss`, `branch_position
                     include'connect.php';
-                    $id1=$_GET['id'];
-                    // sql to delete a record
-                    $sql = "DELETE FROM activity WHERE actity_id='$id1'";
+                    $branch_code = $_GET['branch_code'];
+                    $branch_name = $_GET['branch_name'];
+                    $branch_boss = $_GET['branch_boss'];
+                    $branch_position = $_GET['branch_position'];
+                    $h_id = $_GET['h_id'];
+
+                    //echo $editor1;
+                    //UPDATE `branch` SET `branch_name` = 'การไฟฟ้าส่วนภูมิภาคอำเภอบัวใหญ่++' WHERE `branch`.`branch_id` = 1;
+                    $sql = "UPDATE branch SET branch_code='$branch_code', branch_name='$branch_name', branch_boss='$branch_boss', branch_position='$branch_position' WHERE branch_id='$h_id'";
 
                     if ($conn->query($sql) === TRUE) {
-                        echo "Record deleted successfully";
+                      echo "บันทึกข้อมูลสำเร็จ";
                     } else {
-                        echo "Error deleting record: " . $conn->error;
+                      echo "Error: " . $sql . "<br>" . $conn->error;
                     }
+
+                    $conn->close();
+
                     ?>
+                    <a href="branch.php"><button type="button" class="btn btn-primary btn-sm">ย้อนกลับ</button></a>
                 </div>
             </div>
+
         </section>
     </main>
-    
 </body>
 
 </html>
