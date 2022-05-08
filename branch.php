@@ -601,6 +601,7 @@
                                         <th scope="col">ชื่อการไฟฟ้า</th>
                                         <th scope="col">ผู้บริหาร</th>
                                         <th scope="col">ตำแหน่ง</th>
+                                        <th scope="col">ลายเซ็นต์</th>
                                         <th scope="col">การจัดการ</th>
                                     </tr>
                                 </thead>
@@ -619,6 +620,7 @@
                                         <td><?php echo $row['branch_name'];?></td>
                                         <td><?php echo $row['branch_boss'];?></td>
                                         <td><?php echo $row['branch_position'];?></td>
+                                        <td><a href="branch_sign.php">view picture</a></td>
                                         <td>
                                             <a href="branch_edit.php?id=<?php echo $row['branch_id'];?>">
                                                 <i class="ri-edit-2-fill"></i>
