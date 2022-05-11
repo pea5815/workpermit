@@ -569,7 +569,7 @@
                                         echo "0 results";
                                     }
                                     ?>
-                            <form class="row g-3" action="branch_update.php" method="get">
+                            <form class="row g-3" action="branch_update.php" method="POST" enctype="multipart/form-data">
                                 <div class="col-md-3">
                                     <label for="inputEmail5" class="form-label">รหัสการไฟฟ้า</label>
                                     <input type="text" class="form-control" name="branch_code"
@@ -589,6 +589,10 @@
                                     <label for="inputPassword5" class="form-label">ตำแหน่ง</label></label>
                                     <input type="text" class="form-control" name="branch_position"
                                         value="<?php echo $branch_position;?>" required>
+                                </div>
+                                <div class="col-md-4">
+                                    <label for="inputPassword5" class="form-label">รูปภาพลายเซ็นต์</label></label>
+                                    <input type="file" name="fileToUpload" id="fileToUpload" class="form-control">
                                 </div>
                                 <input type="hidden" name="h_id" value="<?php echo $idcode;?>">
                                 <div class="text-center">

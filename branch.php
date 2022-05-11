@@ -552,7 +552,7 @@
                             <h5 class="card-title">General Form Elements</h5>
 
                             <!-- General Form Elements branch_id`, `branch_code`, `branch_name`, `branch_boss`, `branch_position-->
-                            <form class="row g-3" action="branch_check.php" method="get">
+                            <form class="row g-3" action="branch_check.php" method="POST" enctype="multipart/form-data">
                                 <div class="col-md-3">
                                     <label for="inputEmail5" class="form-label">รหัสการไฟฟ้า</label>
                                     <input type="text" class="form-control" name="branch_code" placeholder="กรส., กรท.,"
@@ -573,7 +573,10 @@
                                     <input type="text" class="form-control" name="branch_position"
                                         placeholder="0xx-xxxxxxx" required>
                                 </div>
-
+                                <div class="col-md-4">
+                                    <label for="inputPassword5" class="form-label">รูปภาพลายเซ็นต์</label></label>
+                                    <input type="file" name="fileToUpload" id="fileToUpload" class="form-control" required>
+                                </div>
                                 <div class="text-center">
                                     <button type="submit" class="btn btn-primary">SAVE</button>
                                     <button type="reset" class="btn btn-secondary">RESET</button>
@@ -620,7 +623,7 @@
                                         <td><?php echo $row['branch_name'];?></td>
                                         <td><?php echo $row['branch_boss'];?></td>
                                         <td><?php echo $row['branch_position'];?></td>
-                                        <td><a href="branch_sign.php">view picture</a></td>
+                                        <td><a href="uploads/<?php echo $row['branch_sign'];?>">view picture</a></td>
                                         <td>
                                             <a href="branch_edit.php?id=<?php echo $row['branch_id'];?>">
                                                 <i class="ri-edit-2-fill"></i>
