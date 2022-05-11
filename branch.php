@@ -623,7 +623,21 @@
                                         <td><?php echo $row['branch_name'];?></td>
                                         <td><?php echo $row['branch_boss'];?></td>
                                         <td><?php echo $row['branch_position'];?></td>
-                                        <td><a href="uploads/<?php echo $row['branch_sign'];?>">view picture</a></td>
+                                        <td>
+                                            <?php
+                                            if(empty($row['branch_sign'])){
+                                                ?>
+                                                    ยังไม่มี
+                                                    
+                                                <?php
+                                            }else{
+                                                ?>
+                                                    <a href="uploads/<?php echo $row['branch_sign'];?>">view picture</a>
+                                                <?php
+                                            }
+                                            ?>
+                                            
+                                    </td>
                                         <td>
                                             <a href="branch_edit.php?id=<?php echo $row['branch_id'];?>">
                                                 <i class="ri-edit-2-fill"></i>

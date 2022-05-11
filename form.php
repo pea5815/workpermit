@@ -665,9 +665,10 @@
                                     <tr>
                                         <th scope="col">ว/ด/ป</th>
                                         <th scope="col">ชื่อ - สกุล</th>
-                                        <th scope="col"></th>
-                                        <th scope="col">Age</th>
-                                        <th scope="col">Start Date</th>
+                                        <th scope="col"><img src="img/1.jpg" ></th>
+                                        <th scope="col"><img src="img/2.jpg" ></th>
+                                        <th scope="col"><img src="img/3.jpg" ></th>
+                                        <th scope="col"><img src="img/4.jpg" ></th>
                                     </tr>
                                 </thead>
                                 <tbody>
