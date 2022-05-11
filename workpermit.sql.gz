@@ -1,0 +1,118 @@
+-- phpMyAdmin SQL Dump
+-- version 5.1.3
+-- https://www.phpmyadmin.net/
+--
+-- Host: 127.0.0.1
+-- Generation Time: May 11, 2022 at 01:41 PM
+-- Server version: 10.4.24-MariaDB
+-- PHP Version: 8.1.5
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+START TRANSACTION;
+SET time_zone = "+00:00";
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8mb4 */;
+
+--
+-- Database: `workpermit`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `activity`
+--
+
+CREATE TABLE `activity` (
+  `actity_id` int(11) NOT NULL,
+  `organi_id` int(2) NOT NULL,
+  `in_organi` varchar(30) NOT NULL,
+  `in_fullname` varchar(30) NOT NULL,
+  `in_tel` varchar(11) NOT NULL,
+  `out_organi` varchar(30) NOT NULL,
+  `out_fullname` varchar(30) NOT NULL,
+  `out_tel` varchar(11) NOT NULL,
+  `start_date1` date NOT NULL,
+  `start_time` time NOT NULL,
+  `end_date` date NOT NULL,
+  `end_time` time NOT NULL,
+  `detail` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `activity`
+--
+
+INSERT INTO `activity` (`actity_id`, `organi_id`, `in_organi`, `in_fullname`, `in_tel`, `out_organi`, `out_fullname`, `out_tel`, `start_date1`, `start_time`, `end_date`, `end_time`, `detail`) VALUES
+(6, 0, 's', 's', 's', 's', 's', 's', '2022-05-07', '15:30:00', '2022-05-07', '16:30:00', ''),
+(7, 2, 'กรส.ผรส', 'นายศตพร กาญจนต่อสกุล', '081-1111111', 'บ.ดีใจ เอ็นเตอร์ไพรส', 'นายสมศักดิ์ สืบสวน', '082-2222222', '2022-05-07', '15:00:00', '2022-05-07', '18:00:00', '<ul>\n	<li>ติดตั้งระบบกันฟ้าผ่าภายในห้องสื่อสารข้อมูล กฟอ.บญ.</li>\n	<li>ทดสอบระบบควบคุมระยะไกล อุณหภูมิความชื้น</li>\n</ul>\n'),
+(8, 2, 'กรส.ผรส', 'นายศตพร กาญจนต่อสกุล', '081-1111111', 'บ.ดีใจ เอ็นเตอร์ไพรส', 'นายสมศักดิ์ สืบสวน', '082-2222222', '2022-05-07', '15:00:00', '2022-05-07', '18:00:00', '<ul>\r\n	<li>ติดตั้งระบบกันฟ้าผ่าภายในห้องสื่อสารข้อมูล กฟอ.บญ.</li>\r\n	<li>ทดสอบระบบควบคุมระยะไกล อุณหภูมิความชื้น</li>\r\n</ul>\r\n'),
+(9, 0, 'งานความปลอดภัย', 'นายศุภกฤต อารีดี', '081-1111111', 'บ. ไลน์ก่อสร้าง', 'นายสามารถ จงนอก', '082-2222222', '2022-05-07', '09:00:00', '2022-05-07', '12:00:00', '<p>กหดกดหดห</p>\r\n');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `branch`
+--
+
+CREATE TABLE `branch` (
+  `branch_id` int(11) NOT NULL,
+  `branch_code` varchar(7) NOT NULL,
+  `branch_name` varchar(50) NOT NULL,
+  `branch_boss` varchar(50) NOT NULL,
+  `branch_position` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `branch`
+--
+
+INSERT INTO `branch` (`branch_id`, `branch_code`, `branch_name`, `branch_boss`, `branch_position`) VALUES
+(1, 'F08101', 'การไฟฟ้าส่วนภูมิภาคอำเภอบัวใหญ่', 'นายศตพร กาญจนต่อสกุล', 'ผจก.กฟอ.บญ.'),
+(2, 'F08105', 'การไฟฟ้าส่วนภูมิภาคสาขาย่อยอำเภอแก้งสนามนาง', 'นายประพันธ์ ปัญญาสุทธิเลิศ', 'ผจก.กฟย.กสน'),
+(3, 'F08106', 'การไฟฟ้าส่วนภูมิภาคสาขาย่อยอำเภอบัวลาย', 'นายนัครินทร์ คิดการ', 'ผจก.กฟย.บล'),
+(4, 'F08201', 'การไฟฟ้าส่วนภูมิภาคสาขาอำเภอประทาย', 'นายสิงหา	จันทร์โสม', 'ผจก.กฟส.ปทย'),
+(5, 'F08202', 'การไฟฟ้าส่วนภูมิภาคสาขาย่อยอำเภอโนนแดง', 'นายอุกฤษฏ์ ไซยรัตน์', 'ผจก.กฟย.นด'),
+(6, 'F08301', 'การไฟฟ้าส่วนภูมิภาคสาขาอำเภอคง', 'นายจิตติ สถาพร', 'ผจก.กฟส.คง'),
+(7, 'F08302', 'การไฟฟ้าส่วนภูมิภาคสาขาย่อยอำเภอบ้านเหลื่อม', 'นายวิเชียร จัตุรงค์', 'ผจก.กฟย.บหม');
+
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indexes for table `activity`
+--
+ALTER TABLE `activity`
+  ADD PRIMARY KEY (`actity_id`);
+
+--
+-- Indexes for table `branch`
+--
+ALTER TABLE `branch`
+  ADD PRIMARY KEY (`branch_id`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `activity`
+--
+ALTER TABLE `activity`
+  MODIFY `actity_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+
+--
+-- AUTO_INCREMENT for table `branch`
+--
+ALTER TABLE `branch`
+  MODIFY `branch_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+COMMIT;
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
